@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/list_Fragment">
+
+    <fragment
+        android:id="@+id/list_Fragment"
+        android:name="com.example.ultimatenote2_0.list_Fragment"
+        android:label="fragment_list_"
+        tools:layout="@layout/fragment_list_" >
+        <action
+            android:id="@+id/action_list_Fragment_to_add_Fragment"
+            app:destination="@id/add_Fragment" />
+        <action
+            android:id="@+id/action_list_Fragment_to_updateFragment"
+            app:destination="@id/updateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/add_Fragment"
+        android:name="com.example.ultimatenote2_0.add_Fragment"
+        android:label="fragment_add_"
+        tools:layout="@layout/fragment_add_" >
+        <action
+            android:id="@+id/action_add_Fragment_to_list_Fragment"
+            app:destination="@id/list_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="com.example.ultimatenote2_0.updateFragment"
+        android:label="fragment_update"
+        tools:layout="@layout/fragment_update" >
+        <action
+            android:id="@+id/action_updateFragment_to_list_Fragment"
+            app:destination="@id/list_Fragment" />
+        <argument
+            android:name="currentUser"
+            app:argType="com.example.ultimatenote2_0.User" />
+    </fragment>
+</navigation>
